@@ -6,8 +6,9 @@ ser = serial.Serial('/dev/ttyUSB0', 9600)  # Replace '/dev/ttyUSB0' with your Ar
 
 # Initialize FluidSynth
 fs = fluidsynth.Synth()
+fs.settings.setint("synth.sample-rate", 48000)  # Adjust the sample rate to match your audio system
 fs.start()
-sfid = fs.sfload('/path/to/your/soundfont.sf2')  # Replace '/path/to/your/soundfont.sf2' with the actual path to your SoundFont file
+sfid = fs.sfload('./korg_x5_drums.sf2')  # Replace '/path/to/your/soundfont.sf2' with the actual path to your SoundFont file
 
 # Main loop to receive MIDI messages from Arduino and play sounds
 while True:
