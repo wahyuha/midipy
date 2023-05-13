@@ -6,7 +6,11 @@ ser = serial.Serial('/dev/ttyUSB0', 9600)  # Replace '/dev/ttyUSB0' with your Ar
 
 # Initialize FluidSynth
 fs = fluidsynth.Synth()
-fs.settings['synth.sample-rate'] = 48000
+settings = fs.settings()
+
+# Set the sample rate to match your audio system
+settings.setnum("synth.sample-rate", 48000)
+
 fs.start()
 sfid = fs.sfload('./korg_x5_drums.sf2')  # Replace '/path/to/your/soundfont.sf2' with the actual path to your SoundFont file
 
