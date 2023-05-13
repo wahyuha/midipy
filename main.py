@@ -7,7 +7,7 @@ ser = serial.Serial('/dev/ttyUSB0', 9600)  # Replace '/dev/ttyUSB0' with your Ar
 # Initialize FluidSynth
 fs = fluidsynth.Synth()
 # Start the audio driver
-fluidsynth.init("driver=alsa")
+# fluidsynth.init("driver=alsa")
 
 # Load the SoundFont
 sfid = fs.sfload("korg_x5_drums.sf2")
